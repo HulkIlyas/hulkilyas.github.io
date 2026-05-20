@@ -72,16 +72,15 @@ nav a:hover { color: var(--accent); }
 
 /* HEADER */
 header {
-  padding: 4rem 0 3rem;
-  margin-top: 1.5rem;
+  padding: 2.5rem 0 2.5rem;
   border-bottom: 1px solid var(--border);
 }
 
 header .page {
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
+  align-items: center;
   gap: 2rem;
-  align-items: start;
+  flex-wrap: wrap;
 }
 
 .header-name {
@@ -359,9 +358,14 @@ footer {
   color: var(--accent);
 }
 
-@media (max-width: 680px) {
-  header .page { grid-template-columns: 1fr; }
-  .header-meta { text-align: left; }
+@media (max-width: 600px) {
+  header .page { flex-direction: column; align-items: center; text-align: center; }
+  .header-flex { flex-direction: column; align-items: center; justify-content: center; }
+  header .page img { display: block; margin: 0 auto 0.5rem auto; }
+  .header-text { text-align: center !important; width: 100%; }
+  .header-name { text-align: center; }
+  .header-title { text-align: center; }
+  .header-contacts { justify-content: center; text-align: center; }
   .layout { grid-template-columns: 1fr; }
   .main-col { padding: 2rem 0; border-right: none; border-bottom: 1px solid var(--border); }
   .side-col { padding: 2rem 0; }
@@ -383,9 +387,9 @@ footer {
 </div>
 
   <div class="page">
-    <div style="display:flex;align-items:center;gap:1.5rem;">
-      <img src="https://img.magnific.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?semt=ais_hybrid&w=740&q=80" alt="Ilyas El Mousaouy" style="width:200px;height:200px;object-fit:cover;border-radius:50%;border:2px solid var(--border);flex-shrink:0;margin-top:1.5rem;">
-      <div>
+    <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;width:100%;justify-content:flex-start;" class="header-flex">
+      <img src="https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg" alt="Ilyas El Mousaouy" style="width:140px;height:140px;object-fit:cover;border-radius:50%;border:2px solid var(--border);flex-shrink:0;">
+      <div style="min-width:200px;flex:1;text-align:left;" class="header-text">
         <h1 class="header-name">Ilyas El Mousaouy</h1>
         <div class="header-title">Full Stack Developer — MERN Stack</div>
         <div class="header-contacts">
