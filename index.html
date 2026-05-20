@@ -328,6 +328,25 @@ footer {
   color: var(--faint);
 }
 
+/* SLOGAN BAR */
+.slogan-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  padding: 0.6rem 2rem;
+  font-size: 13.5px;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+
+.slogan-bar strong {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--accent);
+}
+
 @media (max-width: 680px) {
   header .page { grid-template-columns: 1fr; }
   .header-meta { text-align: left; }
@@ -347,7 +366,10 @@ footer {
   <a href="#languages">Languages</a>
 </nav>
 
-<header>
+<div class="slogan-bar">
+  Don't worry, help has arrived. You're welcome.
+</div>
+
   <div class="page">
     <div>
       <h1 class="header-name">Ilyas El Mousaouy</h1>
