@@ -1,1 +1,799 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — idarr</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0b0c0e;
+      --surface: #111215;
+      --line: #1c1e23;
+      --text: #e2e4ea;
+      --muted: #555966;
+      --faint: #2a2d35;
+      --blue: #4b8ef5;
+      --green: #3ecf78;
+      --red: #e05454;
+      --purple: #9f7aea;
+      --amber: #f0a429;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11,12,14,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+      padding: .75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-tag {
+      font-size: .7rem;
+      padding: .25rem .65rem;
+      border-radius: 4px;
+      background: var(--faint);
+      color: var(--muted);
+      letter-spacing: .06em;
+    }
+
+    /* ── LAYOUT ── */
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 5rem 0 3.5rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -.03em;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-sub {
+      font-size: .9rem;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    .hero-meta {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .72rem;
+      font-weight: 500;
+      padding: .3rem .75rem;
+      border-radius: 4px;
+      letter-spacing: .04em;
+    }
+
+    .tag-green  { background: #0d2318; color: var(--green); border: 1px solid #1a3d27; }
+    .tag-blue   { background: #0d1a30; color: var(--blue);  border: 1px solid #1a2f52; }
+    .tag-red    { background: #2a1010; color: var(--red);   border: 1px solid #451a1a; }
+    .tag-purple { background: #1a1228; color: var(--purple); border: 1px solid #2e1f4a; }
+    .tag-amber  { background: #231800; color: var(--amber);  border: 1px solid #3d2c00; }
+
+    .tag::before { content: ''; display: block; width: 5px; height: 5px; border-radius: 50%; background: currentColor; opacity: .8; }
+
+    /* ── TOC ── */
+    .toc-block {
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .toc-label {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .2rem .5rem;
+    }
+
+    .toc-list a {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .82rem;
+      color: var(--muted);
+      text-decoration: none;
+      padding: .35rem 0;
+      transition: color .15s;
+    }
+
+    .toc-list a:hover { color: var(--text); }
+
+    .toc-list a .toc-num {
+      font-size: .65rem;
+      color: var(--faint);
+      width: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section:last-of-type { border-bottom: none; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-num {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -.02em;
+      color: #fff;
+    }
+
+    h3 {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 1.5rem 0 .6rem;
+      letter-spacing: -.01em;
+    }
+
+    p {
+      font-size: .9rem;
+      color: #9aa0b0;
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── CALLOUT ── */
+    .callout {
+      border-left: 2px solid var(--green);
+      background: #0a1c12;
+      border-radius: 0 6px 6px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    .callout.warn { border-color: var(--amber); background: #1a1200; }
+    .callout.info { border-color: var(--blue);  background: #0a1220; }
+
+    .callout p {
+      margin: 0;
+      font-size: .85rem;
+      line-height: 1.7;
+    }
+
+    .callout strong {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .callout.warn strong { color: var(--amber); }
+    .callout.info  strong { color: var(--blue); }
+
+    /* ── DATA TABLE ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.25rem 0;
+      font-size: .82rem;
+    }
+
+    .data-table th {
+      text-align: left;
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: .6rem .75rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .data-table td {
+      padding: .7rem .75rem;
+      color: #8a90a0;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      line-height: 1.6;
+    }
+
+    .data-table td:first-child { color: var(--text); font-weight: 500; }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      font-size: .75rem;
+      font-weight: 500;
+    }
+    .status::before { content: ''; width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .status-no  { color: var(--red);   }
+    .status-no::before  { background: var(--red); }
+    .status-yes { color: var(--green); }
+    .status-yes::before { background: var(--green); }
+    .status-na  { color: var(--muted); }
+    .status-na::before  { background: var(--muted); }
+
+    /* ── RIGHTS GRID ── */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 1.5rem 0;
+    }
+
+    .right-item {
+      background: var(--surface);
+      padding: 1rem 1.1rem;
+    }
+
+    .right-item .right-icon {
+      font-size: .8rem;
+      color: var(--blue);
+      margin-bottom: .4rem;
+      display: block;
+    }
+
+    .right-item .right-title {
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .2rem;
+    }
+
+    .right-item .right-desc {
+      font-size: .76rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 2.5rem 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .footer-copy {
+      font-size: .75rem;
+      color: var(--muted);
+    }
+
+    footer a { color: var(--blue); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 540px) {
+      .toc-list { grid-template-columns: 1fr; }
+      .rights-grid { grid-template-columns: 1fr; }
+      nav { padding: .65rem 1.25rem; }
+      .wrap { padding: 0 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#">idarr</a>
+  <span class="nav-tag">Privacy Policy</span>
+</nav>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">
+      <span class="dot"></span>
+      Last updated June 10, 2026
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="hero-sub">
+      idarr is built on a simple promise: your device is yours. We don't track you, profile you, or share anything about you — because we collect nothing to begin with.
+    </p>
+    <div class="hero-meta">
+      <span class="tag tag-green">No data collected</span>
+      <span class="tag tag-green">No account required</span>
+      <span class="tag tag-green">No ads</span>
+      <span class="tag tag-blue">Works offline</span>
+      <span class="tag tag-blue">No third-party SDKs</span>
+    </div>
+  </section>
+
+  <!-- TOC -->
+  <nav class="toc-block" aria-label="Table of contents">
+    <p class="toc-label">Contents</p>
+    <ul class="toc-list">
+      <li><a href="#s1"><span class="toc-num">01</span> Overview</a></li>
+      <li><a href="#s2"><span class="toc-num">02</span> Information we collect</a></li>
+      <li><a href="#s3"><span class="toc-num">03</span> How the app works locally</a></li>
+      <li><a href="#s4"><span class="toc-num">04</span> Android permissions</a></li>
+      <li><a href="#s5"><span class="toc-num">05</span> Third-party services</a></li>
+      <li><a href="#s6"><span class="toc-num">06</span> Advertising</a></li>
+      <li><a href="#s7"><span class="toc-num">07</span> Data sharing &amp; sale</a></li>
+      <li><a href="#s8"><span class="toc-num">08</span> Data retention</a></li>
+      <li><a href="#s9"><span class="toc-num">09</span> Security</a></li>
+      <li><a href="#s10"><span class="toc-num">10</span> Children's privacy</a></li>
+      <li><a href="#s11"><span class="toc-num">11</span> Your rights</a></li>
+      <li><a href="#s12"><span class="toc-num">12</span> International users</a></li>
+      <li><a href="#s13"><span class="toc-num">13</span> Changes to this policy</a></li>
+      <li><a href="#s14"><span class="toc-num">14</span> Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- S1: Overview -->
+  <section class="section" id="s1">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>Overview</h2>
+    </div>
+    <div class="callout">
+      <p><strong>TL;DR —</strong> idarr does not collect, process, store, or transmit any personal data. This policy exists to be transparent about that fact, and to comply with app store requirements.</p>
+    </div>
+    <p>This Privacy Policy describes how idarr ("the app", "we", "our") handles information in connection with your use of the idarr application, available on the Google Play Store.</p>
+    <p>By downloading or using idarr, you agree to the terms outlined in this policy. If you do not agree, please discontinue use of the app.</p>
+    <p>This policy applies exclusively to the idarr mobile application. It does not apply to any other websites, services, or applications that may link to the app or that the app may link to.</p>
+  </section>
+
+  <!-- S2: What we collect -->
+  <section class="section" id="s2">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>Information we collect</h2>
+    </div>
+    <p>idarr collects <strong style="color:#fff">no information of any kind</strong>. The following table gives a complete picture.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Examples</th>
+          <th>Collected?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Personal identifiers</td>
+          <td>Name, email, phone number, address</td>
+          <td><span class="status status-no">Never</span></td>
+        </tr>
+        <tr>
+          <td>Device identifiers</td>
+          <td>IMEI, Android ID, advertising ID</td>
+          <td><span class="status status-no">Never</span></td>
+        </tr>
+        <tr>
+          <td>Usage data</td>
+          <td>Screens viewed, features used, session length</td>
+          <td><span class="status status-no">Never</span></td>
+        </tr>
+        <tr>
+          <td>Crash &amp; diagnostics</td>
+          <td>Stack traces, ANRs, battery state</td>
+          <td><span class="status status-no">Never</span></td>
+        </tr>
+        <tr>
+          <td>Location data</td>
+          <td>GPS, coarse network location, IP-based location</td>
+          <td><span class="status status-no">Never</span></td>
+        </tr>
+        <tr>
+          <td>Financial data</td>
+          <td>Payment info, purchase history</td>
+          <td><span class="status status-na">N/A — app is free</span></td>
+        </tr>
+        <tr>
+          <td>Contacts</td>
+          <td>Address book, social graph</td>
+          <td><span class="status status-no">Never</span></td>
+        </tr>
+        <tr>
+          <td>Photos &amp; media</td>
+          <td>Camera roll, screenshots</td>
+          <td><span class="status status-no">Never</span></td>
+        </tr>
+        <tr>
+          <td>Audio &amp; microphone</td>
+          <td>Voice recordings, audio input</td>
+          <td><span class="status status-no">Never</span></td>
+        </tr>
+        <tr>
+          <td>Clipboard content</td>
+          <td>Text you've copied</td>
+          <td><span class="status status-no">Never</span></td>
+        </tr>
+        <tr>
+          <td>Browser history</td>
+          <td>URLs visited outside the app</td>
+          <td><span class="status status-no">Never</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- S3: Local processing -->
+  <section class="section" id="s3">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>How the app works locally</h2>
+    </div>
+    <p>idarr runs entirely on your device. Any content you create, configure, or interact with within the app is stored locally in the app's private sandbox on your device's internal storage — it is never uploaded, synced, or shared with any server.</p>
+
+    <h3>Local storage</h3>
+    <p>idarr may use Android's standard local storage mechanisms (such as SharedPreferences or an SQLite database) to persist your in-app preferences and data between sessions. This data lives exclusively on your device. It is erased when you uninstall the app.</p>
+
+    <h3>Network connectivity</h3>
+    <p>idarr does not establish any network connections to external servers for the purpose of transmitting personal data. If the app has network connectivity at all, it is solely to serve a core feature that is clearly visible to you within the app — never silently.</p>
+
+    <div class="callout info">
+      <p><strong>Note —</strong> The absence of analytics or crash reporting means we genuinely do not receive feedback when something goes wrong. If you encounter a bug, please contact us directly so we can fix it.</p>
+    </div>
+  </section>
+
+  <!-- S4: Permissions -->
+  <section class="section" id="s4">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Android permissions</h2>
+    </div>
+    <p>Android requires apps to declare permissions they may need. Any permission listed in idarr's manifest is used solely to power a specific, user-facing feature — never to collect data. The current version of idarr requests the minimum set of permissions needed to function.</p>
+    <p>You can review and revoke permissions at any time via <strong style="color:#fff">Settings → Apps → idarr → Permissions</strong> on your Android device. Revoking a permission may disable related features, but will never affect data privacy — because no data is transmitted regardless.</p>
+
+    <div class="callout warn">
+      <p><strong>Important —</strong> If a future version of idarr requests a sensitive permission not currently in use (such as camera or microphone), this policy will be updated and a specific justification will be added here before that release is published.</p>
+    </div>
+  </section>
+
+  <!-- S5: Third-party -->
+  <section class="section" id="s5">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2>Third-party services</h2>
+    </div>
+    <p>idarr does not integrate any third-party SDKs, libraries, or services that would collect data. Specifically:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Service type</th>
+          <th>Integrated?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Analytics (e.g. Firebase Analytics, Mixpanel, Amplitude)</td>
+          <td><span class="status status-no">None</span></td>
+        </tr>
+        <tr>
+          <td>Crash reporting (e.g. Crashlytics, Sentry)</td>
+          <td><span class="status status-no">None</span></td>
+        </tr>
+        <tr>
+          <td>Advertising networks (e.g. AdMob, Meta Audience Network)</td>
+          <td><span class="status status-no">None</span></td>
+        </tr>
+        <tr>
+          <td>Authentication providers (e.g. Google Sign-In, Firebase Auth)</td>
+          <td><span class="status status-no">None</span></td>
+        </tr>
+        <tr>
+          <td>Cloud storage / sync (e.g. Firebase, AWS Amplify)</td>
+          <td><span class="status status-no">None</span></td>
+        </tr>
+        <tr>
+          <td>Push notification services</td>
+          <td><span class="status status-no">None</span></td>
+        </tr>
+        <tr>
+          <td>Maps or location services</td>
+          <td><span class="status status-no">None</span></td>
+        </tr>
+        <tr>
+          <td>Social login / sharing SDKs</td>
+          <td><span class="status status-no">None</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Google Play Services may be present on your device as a system-level component independent of idarr. Any data Google collects through Play Services is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's own Privacy Policy</a> and is outside idarr's control.</p>
+  </section>
+
+  <!-- S6: Advertising -->
+  <section class="section" id="s6">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2>Advertising</h2>
+    </div>
+    <p>idarr contains no advertisements. There are no banner ads, interstitial ads, rewarded ads, or native ads of any kind. No advertising network is integrated. No advertising identifier (GAID) is read or transmitted.</p>
+    <p>idarr is a free app with no monetization through advertising — current or planned. Should that change in a future version, this policy will be updated, and you will be notified through the app's Play Store release notes before any update containing ads is published.</p>
+
+    <div class="callout">
+      <p><strong>Current status —</strong> idarr is entirely ad-free. No ad SDK, no tracking, no behavioural profiling.</p>
+    </div>
+  </section>
+
+  <!-- S7: Sharing -->
+  <section class="section" id="s7">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <h2>Data sharing &amp; sale</h2>
+    </div>
+    <p>We do not share personal data with any third party — because we hold no personal data to share. We do not:</p>
+    <p>— Sell personal data to data brokers or advertisers.<br>
+       — Share data with business partners or affiliates.<br>
+       — Disclose data to government agencies (there is nothing to disclose).<br>
+       — Transfer data in connection with a merger, acquisition, or asset sale.</p>
+    <p>In the event idarr is ever acquired or merged with another entity, any successor will be bound by this policy. If the policy is to change materially, users will be notified in advance.</p>
+  </section>
+
+  <!-- S8: Retention -->
+  <section class="section" id="s8">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <h2>Data retention</h2>
+    </div>
+    <p>Since idarr collects no personal data, there is nothing for us to retain or delete on our side. All data created by you within the app (preferences, user-generated content) resides solely on your device.</p>
+    <p>To delete all app data:</p>
+    <p>— <strong style="color:#fff">Uninstall the app</strong> — all app data is removed from your device automatically by Android.<br>
+       — Or go to <strong style="color:#fff">Settings → Apps → idarr → Storage → Clear Data</strong> to wipe app data without uninstalling.</p>
+    <p>After uninstalling idarr, no residual data about you exists anywhere — neither on your device nor on our servers (we have no servers).</p>
+  </section>
+
+  <!-- S9: Security -->
+  <section class="section" id="s9">
+    <div class="section-header">
+      <span class="section-num">09</span>
+      <h2>Security</h2>
+    </div>
+    <p>The most effective data security is to not collect data in the first place. idarr is designed around this principle.</p>
+    <p>Local data stored by the app on your device is protected by Android's application sandbox — other apps cannot access it without root access. For additional security, we recommend keeping your device's operating system up to date and enabling device-level encryption (enabled by default on modern Android devices).</p>
+    <p>We cannot guarantee the absolute security of data on your physical device — we have no control over physical theft, malware, or rooted devices. Use standard Android security practices (screen lock, Play Protect, updated OS) to protect your device generally.</p>
+
+    <div class="callout info">
+      <p><strong>Responsible disclosure —</strong> If you discover a security vulnerability in idarr, please report it to us at <a href="mailto:contact@idarr.app">contact@idarr.app</a> before disclosing it publicly. We take all reports seriously and will respond promptly.</p>
+    </div>
+  </section>
+
+  <!-- S10: Children -->
+  <section class="section" id="s10">
+    <div class="section-header">
+      <span class="section-num">10</span>
+      <h2>Children's privacy</h2>
+    </div>
+    <p>idarr does not knowingly collect any personal information from children under the age of 13, or under any higher applicable age threshold in their jurisdiction (e.g. 16 under GDPR in certain countries).</p>
+    <p>Because idarr collects no personal data from anyone, it is inherently compliant with:</p>
+    <p>— <strong style="color:#fff">COPPA</strong> (Children's Online Privacy Protection Act, USA)<br>
+       — <strong style="color:#fff">Google Play Families Policy</strong><br>
+       — <strong style="color:#fff">GDPR Article 8</strong> (processing of children's data)<br>
+       — <strong style="color:#fff">UK GDPR</strong> and the Age Appropriate Design Code</p>
+    <p>If you are a parent or guardian and believe your child has somehow submitted personal information through the app, please contact us. We will promptly investigate and address your concern — although given the app's architecture, we do not believe this is technically possible.</p>
+  </section>
+
+  <!-- S11: Rights -->
+  <section class="section" id="s11">
+    <div class="section-header">
+      <span class="section-num">11</span>
+      <h2>Your rights</h2>
+    </div>
+    <p>Depending on where you live, you may have certain rights regarding personal data. Because idarr does not process personal data, most of these rights are satisfied by default. They are listed here for completeness.</p>
+
+    <div class="rights-grid">
+      <div class="right-item">
+        <span class="right-icon">Access</span>
+        <div class="right-title">Right to access</div>
+        <div class="right-desc">We hold no data about you. Nothing to access.</div>
+      </div>
+      <div class="right-item">
+        <span class="right-icon">Deletion</span>
+        <div class="right-title">Right to erasure</div>
+        <div class="right-desc">Uninstall the app. All local data is gone.</div>
+      </div>
+      <div class="right-item">
+        <span class="right-icon">Portability</span>
+        <div class="right-title">Right to portability</div>
+        <div class="right-desc">Your data is on your device — you already have it.</div>
+      </div>
+      <div class="right-item">
+        <span class="right-icon">Rectification</span>
+        <div class="right-title">Right to rectification</div>
+        <div class="right-desc">We hold no data about you to correct.</div>
+      </div>
+      <div class="right-item">
+        <span class="right-icon">Objection</span>
+        <div class="right-title">Right to object</div>
+        <div class="right-desc">No processing occurs; nothing to object to.</div>
+      </div>
+      <div class="right-item">
+        <span class="right-icon">Restriction</span>
+        <div class="right-title">Right to restrict</div>
+        <div class="right-desc">Processing is already zero. Nothing to restrict.</div>
+      </div>
+    </div>
+
+    <p>To exercise any of these rights, or if you have questions, contact us at <a href="mailto:contact@idarr.app" style="color:var(--blue);">contact@idarr.app</a>. We will respond within 30 days.</p>
+  </section>
+
+  <!-- S12: International -->
+  <section class="section" id="s12">
+    <div class="section-header">
+      <span class="section-num">12</span>
+      <h2>International users</h2>
+    </div>
+    <p>idarr is available globally on the Google Play Store. Because we collect no personal data, no cross-border data transfers occur, and the app is compatible with the data protection requirements of all major jurisdictions, including:</p>
+    <p>
+      — <strong style="color:#fff">GDPR</strong> (European Union &amp; EEA)<br>
+      — <strong style="color:#fff">UK GDPR</strong> (United Kingdom)<br>
+      — <strong style="color:#fff">CCPA / CPRA</strong> (California, USA)<br>
+      — <strong style="color:#fff">LGPD</strong> (Brazil)<br>
+      — <strong style="color:#fff">POPIA</strong> (South Africa)<br>
+      — <strong style="color:#fff">PIPL</strong> (China)<br>
+      — <strong style="color:#fff">PDPA</strong> (Thailand, Singapore)<br>
+      — <strong style="color:#fff">Law 09-08</strong> (Morocco)
+    </p>
+    <p>No data processing agreement, standard contractual clauses, or adequacy decisions are required because no personal data is transferred.</p>
+  </section>
+
+  <!-- S13: Changes -->
+  <section class="section" id="s13">
+    <div class="section-header">
+      <span class="section-num">13</span>
+      <h2>Changes to this policy</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time. When we do, the "Last updated" date at the top of this page will be revised. For material changes — for example, if a future version of idarr introduces analytics, accounts, or advertising — we will:</p>
+    <p>— Update this policy at least 14 days before the change takes effect.<br>
+       — Note the change prominently in the Play Store release notes for that version.<br>
+       — If technically feasible, display an in-app notice on first launch after the update.</p>
+    <p>Your continued use of idarr following any policy update constitutes acceptance of the updated terms. If you do not agree with any change, you should stop using the app.</p>
+    <p>Older versions of this policy are available on request by emailing <a href="mailto:contact@idarr.app" style="color:var(--blue);">contact@idarr.app</a>.</p>
+
+    <div class="callout warn">
+      <p><strong>Commitment —</strong> We will never retroactively change this policy in a way that reduces your privacy protections without explicit, advance notice and a reasonable opt-out period.</p>
+    </div>
+  </section>
+
+  <!-- S14: Contact -->
+  <section class="section" id="s14">
+    <div class="section-header">
+      <span class="section-num">14</span>
+      <h2>Contact</h2>
+    </div>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or idarr's data practices, please reach out. We aim to respond to all inquiries within 5 business days, and no later than 30 days for formal rights requests.</p>
+
+    <table class="data-table">
+      <tbody>
+        <tr>
+          <td>Email</td>
+          <td><a href="mailto:contact@idarr.app" style="color:var(--blue);">contact@idarr.app</a></td>
+        </tr>
+        <tr>
+          <td>App</td>
+          <td>idarr on Google Play</td>
+        </tr>
+        <tr>
+          <td>Response time</td>
+          <td>Within 5 business days</td>
+        </tr>
+        <tr>
+          <td>Rights requests</td>
+          <td>Within 30 days as required by law</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>We do not have a physical mailing address or a designated Data Protection Officer, as no personal data processing occurs that would legally require one.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-brand">idarr</span>
+      <span class="footer-copy">&copy; 2026 idarr. All rights reserved. &nbsp;·&nbsp; <a href="mailto:contact@idarr.app">contact@idarr.app</a></span>
+    </div>
+  </footer>
+
+</div><!-- /wrap -->
+</body>
+</html>
