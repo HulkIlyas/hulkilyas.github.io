@@ -1,0 +1,272 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@400;500&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  .site{font-family:'Inter',sans-serif;color:var(--color-text-primary);background:var(--color-background-tertiary)}
+  .hero{background:#0D4A3A;color:#fff;padding:60px 40px 0;text-align:center;position:relative;overflow:hidden}
+  .nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:56px;position:relative;z-index:2}
+  .logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;letter-spacing:-0.5px;color:#fff}
+  .logo span{color:#4CAF8A}
+  .nav-links{display:flex;gap:24px}
+  .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+  .nav-links a:hover{color:#fff}
+  .nav-cta{background:#4CAF8A;color:#0D4A3A;font-size:13px;font-weight:700;padding:8px 18px;border-radius:20px;border:none;cursor:pointer;font-family:'Inter',sans-serif}
+  .hero-eyebrow{font-size:12px;font-weight:500;letter-spacing:2px;color:#4CAF8A;text-transform:uppercase;margin-bottom:20px}
+  .hero-headline{font-family:'Syne',sans-serif;font-size:46px;font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:20px;position:relative;z-index:2}
+  .hero-headline em{font-style:normal;color:#4CAF8A}
+  .hero-sub{font-size:16px;color:rgba(255,255,255,0.65);max-width:480px;margin:0 auto 36px;line-height:1.6}
+  .hero-actions{display:flex;gap:12px;justify-content:center;margin-bottom:48px;position:relative;z-index:2}
+  .btn-primary{background:#4CAF8A;color:#0D4A3A;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;padding:12px 28px;border-radius:24px;border:none;cursor:pointer}
+  .btn-secondary{background:rgba(255,255,255,0.1);color:#fff;font-family:'Inter',sans-serif;font-weight:500;font-size:14px;padding:12px 28px;border-radius:24px;border:1px solid rgba(255,255,255,0.2);cursor:pointer}
+  .phone-wrap{display:flex;justify-content:center;gap:20px;align-items:flex-end;position:relative;z-index:2}
+  .phone{width:160px;background:#0a3a2c;border-radius:28px 28px 0 0;border:2px solid rgba(255,255,255,0.12);border-bottom:none;overflow:hidden;box-shadow:0 -12px 40px rgba(0,0,0,0.3)}
+  .phone-screen{background:#0D4A3A;padding:14px 12px}
+  .p-header{font-size:9px;color:rgba(255,255,255,0.5);margin-bottom:8px;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+  .p-balance{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#fff;margin-bottom:4px}
+  .p-updated{font-size:8px;color:rgba(255,255,255,0.4);margin-bottom:12px}
+  .p-stats{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
+  .p-stat{background:rgba(255,255,255,0.07);border-radius:8px;padding:8px 8px;border:0.5px solid rgba(255,255,255,0.1)}
+  .p-stat-label{font-size:7px;color:rgba(255,255,255,0.5);margin-bottom:3px}
+  .p-stat-val{font-size:11px;font-weight:700;color:#fff;font-family:'Syne',sans-serif}
+  .p-stat-val.red{color:#E84040}
+  .p-rows{display:flex;flex-direction:column;gap:4px}
+  .p-row{display:flex;justify-content:space-between;align-items:center;padding:7px 8px;background:rgba(255,255,255,0.04);border-radius:6px;border:0.5px solid rgba(255,255,255,0.06)}
+  .p-row-date{font-size:8px;color:rgba(255,255,255,0.7)}
+  .p-row-amt{font-size:8px;font-weight:600;color:#E84040}
+  .p-row-amt.green{color:#4CAF8A}
+  .phone.center{width:180px;transform:none}
+  .phone.side{opacity:0.6;width:140px}
+  .velocity-badge{position:absolute;top:30px;right:30px;background:rgba(76,175,138,0.15);border:1px solid rgba(76,175,138,0.3);border-radius:12px;padding:10px 14px;text-align:left}
+  .vel-label{font-size:10px;color:rgba(255,255,255,0.5);margin-bottom:2px}
+  .vel-val{font-size:18px;font-weight:800;font-family:'Syne',sans-serif;color:#4CAF8A}
+  .vel-unit{font-size:10px;color:rgba(255,255,255,0.4)}
+  .features{padding:60px 40px;background:var(--color-background-tertiary)}
+  .section-label{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:12px}
+  .section-title{font-family:'Syne',sans-serif;font-size:30px;font-weight:800;letter-spacing:-0.8px;margin-bottom:40px;color:var(--color-text-primary)}
+  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .feat-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:24px}
+  .feat-icon{width:40px;height:40px;border-radius:10px;background:#E1F5EE;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:20px}
+  .feat-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;color:var(--color-text-primary)}
+  .feat-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.6}
+  .accent-bar{height:3px;width:32px;background:#4CAF8A;border-radius:2px;margin-bottom:12px}
+  .stats-section{background:#0D4A3A;padding:56px 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px}
+  .stat-block{padding:32px;text-align:center;background:#0D4A3A}
+  .stat-num{font-family:'Syne',sans-serif;font-size:40px;font-weight:800;color:#fff;letter-spacing:-1px}
+  .stat-num span{color:#4CAF8A}
+  .stat-label{font-size:13px;color:rgba(255,255,255,0.5);margin-top:6px}
+  .how{padding:60px 40px;background:var(--color-background-secondary)}
+  .steps{display:flex;flex-direction:column;gap:0}
+  .step{display:grid;grid-template-columns:48px 1fr;gap:20px;padding:24px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+  .step:last-child{border-bottom:none}
+  .step-num{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:#4CAF8A;opacity:0.4;line-height:1}
+  .step-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:6px;color:var(--color-text-primary)}
+  .step-desc{font-size:14px;color:var(--color-text-secondary);line-height:1.6}
+  .cta-section{background:#0D4A3A;padding:64px 40px;text-align:center}
+  .cta-title{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:#fff;letter-spacing:-1px;margin-bottom:16px}
+  .cta-sub{font-size:15px;color:rgba(255,255,255,0.55);margin-bottom:36px}
+  .store-btns{display:flex;gap:12px;justify-content:center}
+  .store-btn{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:12px 20px;cursor:pointer}
+  .store-icon{font-size:22px}
+  .store-text{text-align:left}
+  .store-sub{font-size:10px;color:rgba(255,255,255,0.4)}
+  .store-name{font-size:14px;font-weight:700;color:#fff;font-family:'Syne',sans-serif}
+  .footer{background:#082e24;padding:24px 40px;display:flex;justify-content:space-between;align-items:center}
+  .footer-logo{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:rgba(255,255,255,0.4)}
+  .footer-logo span{color:#4CAF8A}
+  .footer-copy{font-size:12px;color:rgba(255,255,255,0.25)}
+  .hero-bg-circle{position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(76,175,138,0.06);top:-100px;left:50%;transform:translateX(-50%);z-index:1}
+</style>
+
+<div class="site">
+  <div class="hero">
+    <div class="hero-bg-circle"></div>
+    <nav class="nav">
+      <div class="logo">idarr<span>.</span></div>
+      <div class="nav-links">
+        <a href="#">Fonctionnalités</a>
+        <a href="#">Analytiques</a>
+        <a href="#">À propos</a>
+      </div>
+      <button class="nav-cta">Télécharger</button>
+    </nav>
+    <p class="hero-eyebrow">Gestion financière personnelle</p>
+    <h1 class="hero-headline">Maîtrisez votre argent,<br><em>jour après jour</em></h1>
+    <p class="hero-sub">idarr suit vos entrées, vos sorties, et vous donne une vitesse de dépense en temps réel — pour ne plus jamais dépasser votre budget.</p>
+    <div class="hero-actions">
+      <button class="btn-primary">Télécharger l'app</button>
+      <button class="btn-secondary">Voir la démo</button>
+    </div>
+    <div style="position:relative;display:inline-block;width:100%">
+      <div class="velocity-badge">
+        <div class="vel-label">Vitesse des sorties</div>
+        <div class="vel-val">208.90</div>
+        <div class="vel-unit">MAD / jour</div>
+      </div>
+      <div class="phone-wrap">
+        <div class="phone side">
+          <div class="phone-screen">
+            <div class="p-header">Analytics</div>
+            <div style="height:80px;display:flex;align-items:flex-end;gap:4px;padding-bottom:4px">
+              <div style="flex:1;background:rgba(76,175,138,0.3);border-radius:3px 3px 0 0;height:20%"></div>
+              <div style="flex:1;background:rgba(76,175,138,0.3);border-radius:3px 3px 0 0;height:30%"></div>
+              <div style="flex:1;background:rgba(76,175,138,0.3);border-radius:3px 3px 0 0;height:25%"></div>
+              <div style="flex:1;background:#4CAF8A;border-radius:3px 3px 0 0;height:85%"></div>
+              <div style="flex:1;background:#4CAF8A;border-radius:3px 3px 0 0;height:75%"></div>
+              <div style="flex:1;background:#4CAF8A;border-radius:3px 3px 0 0;height:90%"></div>
+              <div style="flex:1;background:#4CAF8A;border-radius:3px 3px 0 0;height:100%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="phone center">
+          <div class="phone-screen">
+            <div class="p-header">Solde du compte</div>
+            <div class="p-balance">8 466.08</div>
+            <div class="p-updated">Mis à jour aujourd'hui</div>
+            <div class="p-stats">
+              <div class="p-stat">
+                <div class="p-stat-label">Entrées du mois</div>
+                <div class="p-stat-val">10 412.21</div>
+              </div>
+              <div class="p-stat">
+                <div class="p-stat-label">Sorties du mois</div>
+                <div class="p-stat-val red">-2 089.00</div>
+              </div>
+            </div>
+            <div class="p-rows">
+              <div class="p-row"><span class="p-row-date">Mer 10 Juin</span><span class="p-row-amt">-250.00</span></div>
+              <div class="p-row"><span class="p-row-date">Mar 09 Juin</span><span class="p-row-amt">-155.00</span></div>
+              <div class="p-row"><span class="p-row-date">Ven 05 Juin</span><span class="p-row-amt green">+9 500.00</span></div>
+              <div class="p-row"><span class="p-row-date">Lun 01 Juin</span><span class="p-row-amt green">+600.00</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="phone side">
+          <div class="phone-screen">
+            <div class="p-header">Budget journalier</div>
+            <div style="margin:8px 0 12px">
+              <div style="font-size:24px;font-weight:800;color:#fff;font-family:'Syne',sans-serif">100</div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);margin-top:2px">MAD / jour</div>
+            </div>
+            <div style="background:#4CAF8A;border-radius:6px;padding:8px;text-align:center;font-size:9px;font-weight:700;color:#0D4A3A">Sauvegarder</div>
+            <div style="margin-top:12px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px">
+              <div style="width:20%;height:100%;background:#4CAF8A;border-radius:2px"></div>
+            </div>
+            <div style="font-size:7px;color:rgba(255,255,255,0.3);margin-top:4px">20.06% du mois utilisé</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="features">
+    <p class="section-label">Fonctionnalités</p>
+    <h2 class="section-title">Tout ce dont vous avez besoin</h2>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon"><i class="ti ti-trending-up" style="color:#0D4A3A;font-size:20px" aria-hidden="true"></i></div>
+        <div class="accent-bar"></div>
+        <div class="feat-title">Vitesse des sorties</div>
+        <p class="feat-desc">Visualisez combien vous dépensez par jour, en temps réel. Ajustez votre rythme avant de dépasser votre budget mensuel.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="ti ti-calendar-stats" style="color:#0D4A3A;font-size:20px" aria-hidden="true"></i></div>
+        <div class="accent-bar"></div>
+        <div class="feat-title">Journal quotidien</div>
+        <p class="feat-desc">Chaque journée détaillée avec entrées et sorties. Retrouvez n'importe quelle transaction en quelques secondes.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="ti ti-chart-line" style="color:#0D4A3A;font-size:20px" aria-hidden="true"></i></div>
+        <div class="accent-bar"></div>
+        <div class="feat-title">Analytiques avancées</div>
+        <p class="feat-desc">Des graphiques clairs pour comprendre vos tendances de dépenses sur n'importe quelle période.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="ti ti-shield-check" style="color:#0D4A3A;font-size:20px" aria-hidden="true"></i></div>
+        <div class="accent-bar"></div>
+        <div class="feat-title">Données privées</div>
+        <p class="feat-desc">Vos finances restent sur votre appareil. Aucun compte requis, aucune synchronisation cloud forcée.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="ti ti-tag" style="color:#0D4A3A;font-size:20px" aria-hidden="true"></i></div>
+        <div class="accent-bar"></div>
+        <div class="feat-title">Catégories personnalisées</div>
+        <p class="feat-desc">Étiquetez vos transactions comme vous le souhaitez — alimentation, transport, développement, loisirs.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon"><i class="ti ti-target" style="color:#0D4A3A;font-size:20px" aria-hidden="true"></i></div>
+        <div class="accent-bar"></div>
+        <div class="feat-title">Budget journalier</div>
+        <p class="feat-desc">Définissez un plafond quotidien et suivez exactement combien de jours votre budget a été "dévoré".</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-section">
+    <div class="stat-block">
+      <div class="stat-num">100<span>%</span></div>
+      <div class="stat-label">Données locales, votre appareil</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num"><span>∞</span></div>
+      <div class="stat-label">Transactions enregistrables</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num">0<span> MAD</span></div>
+      <div class="stat-label">Frais cachés ou abonnement</div>
+    </div>
+  </div>
+
+  <section class="how">
+    <p class="section-label">Comment ça marche</p>
+    <h2 class="section-title">Simple comme votre quotidien</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Ajoutez une transaction</div>
+          <p class="step-desc">Un appui sur le bouton +, entrez le montant, la catégorie, et c'est enregistré. Moins de 5 secondes.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">idarr calcule votre vitesse</div>
+          <p class="step-desc">L'app analyse automatiquement votre rythme de dépense et vous affiche combien de jours votre budget peut encore tenir.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Ajustez, maîtrisez, avancez</div>
+          <p class="step-desc">Consultez les analytiques, modifiez votre budget journalier, et prenez le contrôle de chaque dirham.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2 class="cta-title">Téléchargez idarr gratuitement</h2>
+    <p class="cta-sub">Disponible sur Android. Commencez à gérer votre argent dès aujourd'hui.</p>
+    <div class="store-btns">
+      <div class="store-btn">
+        <div class="store-icon"><i class="ti ti-brand-google-play" style="color:#4CAF8A;font-size:24px" aria-hidden="true"></i></div>
+        <div class="store-text">
+          <div class="store-sub">Disponible sur</div>
+          <div class="store-name">Google Play</div>
+        </div>
+      </div>
+      <div class="store-btn">
+        <div class="store-icon"><i class="ti ti-brand-apple" style="color:#4CAF8A;font-size:24px" aria-hidden="true"></i></div>
+        <div class="store-text">
+          <div class="store-sub">Bientôt sur</div>
+          <div class="store-name">App Store</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">idarr<span>.</span>ati</div>
+    <div class="footer-copy">© 2026 idarrati.com — Tous droits réservés</div>
+  </footer>
+</div>
