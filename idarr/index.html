@@ -1,272 +1,337 @@
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@400;500&display=swap');
-  *{box-sizing:border-box;margin:0;padding:0}
-  .site{font-family:'Inter',sans-serif;color:var(--color-text-primary);background:var(--color-background-tertiary)}
-  .hero{background:#0D4A3A;color:#fff;padding:60px 40px 0;text-align:center;position:relative;overflow:hidden}
-  .nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:56px;position:relative;z-index:2}
-  .logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;letter-spacing:-0.5px;color:#fff}
-  .logo span{color:#4CAF8A}
-  .nav-links{display:flex;gap:24px}
-  .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
-  .nav-links a:hover{color:#fff}
-  .nav-cta{background:#4CAF8A;color:#0D4A3A;font-size:13px;font-weight:700;padding:8px 18px;border-radius:20px;border:none;cursor:pointer;font-family:'Inter',sans-serif}
-  .hero-eyebrow{font-size:12px;font-weight:500;letter-spacing:2px;color:#4CAF8A;text-transform:uppercase;margin-bottom:20px}
-  .hero-headline{font-family:'Syne',sans-serif;font-size:46px;font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:20px;position:relative;z-index:2}
-  .hero-headline em{font-style:normal;color:#4CAF8A}
-  .hero-sub{font-size:16px;color:rgba(255,255,255,0.65);max-width:480px;margin:0 auto 36px;line-height:1.6}
-  .hero-actions{display:flex;gap:12px;justify-content:center;margin-bottom:48px;position:relative;z-index:2}
-  .btn-primary{background:#4CAF8A;color:#0D4A3A;font-family:'Inter',sans-serif;font-weight:700;font-size:14px;padding:12px 28px;border-radius:24px;border:none;cursor:pointer}
-  .btn-secondary{background:rgba(255,255,255,0.1);color:#fff;font-family:'Inter',sans-serif;font-weight:500;font-size:14px;padding:12px 28px;border-radius:24px;border:1px solid rgba(255,255,255,0.2);cursor:pointer}
-  .phone-wrap{display:flex;justify-content:center;gap:20px;align-items:flex-end;position:relative;z-index:2}
-  .phone{width:160px;background:#0a3a2c;border-radius:28px 28px 0 0;border:2px solid rgba(255,255,255,0.12);border-bottom:none;overflow:hidden;box-shadow:0 -12px 40px rgba(0,0,0,0.3)}
-  .phone-screen{background:#0D4A3A;padding:14px 12px}
-  .p-header{font-size:9px;color:rgba(255,255,255,0.5);margin-bottom:8px;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:1px;text-transform:uppercase}
-  .p-balance{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:#fff;margin-bottom:4px}
-  .p-updated{font-size:8px;color:rgba(255,255,255,0.4);margin-bottom:12px}
-  .p-stats{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
-  .p-stat{background:rgba(255,255,255,0.07);border-radius:8px;padding:8px 8px;border:0.5px solid rgba(255,255,255,0.1)}
-  .p-stat-label{font-size:7px;color:rgba(255,255,255,0.5);margin-bottom:3px}
-  .p-stat-val{font-size:11px;font-weight:700;color:#fff;font-family:'Syne',sans-serif}
-  .p-stat-val.red{color:#E84040}
-  .p-rows{display:flex;flex-direction:column;gap:4px}
-  .p-row{display:flex;justify-content:space-between;align-items:center;padding:7px 8px;background:rgba(255,255,255,0.04);border-radius:6px;border:0.5px solid rgba(255,255,255,0.06)}
-  .p-row-date{font-size:8px;color:rgba(255,255,255,0.7)}
-  .p-row-amt{font-size:8px;font-weight:600;color:#E84040}
-  .p-row-amt.green{color:#4CAF8A}
-  .phone.center{width:180px;transform:none}
-  .phone.side{opacity:0.6;width:140px}
-  .velocity-badge{position:absolute;top:30px;right:30px;background:rgba(76,175,138,0.15);border:1px solid rgba(76,175,138,0.3);border-radius:12px;padding:10px 14px;text-align:left}
-  .vel-label{font-size:10px;color:rgba(255,255,255,0.5);margin-bottom:2px}
-  .vel-val{font-size:18px;font-weight:800;font-family:'Syne',sans-serif;color:#4CAF8A}
-  .vel-unit{font-size:10px;color:rgba(255,255,255,0.4)}
-  .features{padding:60px 40px;background:var(--color-background-tertiary)}
-  .section-label{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--color-text-tertiary);margin-bottom:12px}
-  .section-title{font-family:'Syne',sans-serif;font-size:30px;font-weight:800;letter-spacing:-0.8px;margin-bottom:40px;color:var(--color-text-primary)}
-  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  .feat-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:24px}
-  .feat-icon{width:40px;height:40px;border-radius:10px;background:#E1F5EE;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:20px}
-  .feat-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:8px;color:var(--color-text-primary)}
-  .feat-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.6}
-  .accent-bar{height:3px;width:32px;background:#4CAF8A;border-radius:2px;margin-bottom:12px}
-  .stats-section{background:#0D4A3A;padding:56px 40px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px}
-  .stat-block{padding:32px;text-align:center;background:#0D4A3A}
-  .stat-num{font-family:'Syne',sans-serif;font-size:40px;font-weight:800;color:#fff;letter-spacing:-1px}
-  .stat-num span{color:#4CAF8A}
-  .stat-label{font-size:13px;color:rgba(255,255,255,0.5);margin-top:6px}
-  .how{padding:60px 40px;background:var(--color-background-secondary)}
-  .steps{display:flex;flex-direction:column;gap:0}
-  .step{display:grid;grid-template-columns:48px 1fr;gap:20px;padding:24px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
-  .step:last-child{border-bottom:none}
-  .step-num{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:#4CAF8A;opacity:0.4;line-height:1}
-  .step-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:6px;color:var(--color-text-primary)}
-  .step-desc{font-size:14px;color:var(--color-text-secondary);line-height:1.6}
-  .cta-section{background:#0D4A3A;padding:64px 40px;text-align:center}
-  .cta-title{font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:#fff;letter-spacing:-1px;margin-bottom:16px}
-  .cta-sub{font-size:15px;color:rgba(255,255,255,0.55);margin-bottom:36px}
-  .store-btns{display:flex;gap:12px;justify-content:center}
-  .store-btn{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:12px 20px;cursor:pointer}
-  .store-icon{font-size:22px}
-  .store-text{text-align:left}
-  .store-sub{font-size:10px;color:rgba(255,255,255,0.4)}
-  .store-name{font-size:14px;font-weight:700;color:#fff;font-family:'Syne',sans-serif}
-  .footer{background:#082e24;padding:24px 40px;display:flex;justify-content:space-between;align-items:center}
-  .footer-logo{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:rgba(255,255,255,0.4)}
-  .footer-logo span{color:#4CAF8A}
-  .footer-copy{font-size:12px;color:rgba(255,255,255,0.25)}
-  .hero-bg-circle{position:absolute;width:400px;height:400px;border-radius:50%;background:rgba(76,175,138,0.06);top:-100px;left:50%;transform:translateX(-50%);z-index:1}
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+.w{font-family:'DM Sans',sans-serif;background:#F7F6F3;color:#1C1C1C}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:#F7F6F3;border-bottom:1px solid #E4E2DC;flex-wrap:wrap;gap:12px}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:20px;color:#1C1C1C;letter-spacing:-0.3px}
+.nav-logo sup{font-family:'DM Sans',sans-serif;font-size:10px;color:#5A8A6A;font-weight:500;vertical-align:super;margin-left:2px}
+.nav-links{display:flex;gap:24px;flex-wrap:wrap}
+.nav-links a{font-size:13px;color:#6B6B6B;text-decoration:none;font-weight:400}
+.nav-cta{font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;background:#1C1C1C;color:#F7F6F3;padding:9px 22px;border-radius:6px;border:none;cursor:pointer}
+.hero{display:grid;grid-template-columns:1fr 420px;background:#F7F6F3}
+.hero-left{padding:72px 48px 64px;display:flex;flex-direction:column;justify-content:center}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;background:#EAF2EC;color:#3D7A54;font-size:11px;font-weight:500;padding:5px 12px;border-radius:4px;margin-bottom:28px;width:fit-content;letter-spacing:0.3px}
+.hero-tag-dot{width:6px;height:6px;border-radius:50%;background:#5A8A6A;flex-shrink:0}
+.hero-h1{font-family:'DM Serif Display',serif;font-size:48px;line-height:1.08;letter-spacing:-1.5px;color:#1C1C1C;margin-bottom:20px}
+.hero-h1 i{font-style:italic;color:#5A8A6A}
+.hero-body{font-size:15px;color:#6B6B6B;line-height:1.75;max-width:400px;margin-bottom:32px;font-weight:300}
+.hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.btn-dark{background:#1C1C1C;color:#F7F6F3;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;padding:12px 26px;border-radius:6px;border:none;cursor:pointer}
+.btn-ghost{background:transparent;color:#1C1C1C;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:400;padding:12px 20px;border-radius:6px;border:1px solid #D4D2CC;cursor:pointer;display:flex;align-items:center;gap:7px}
+.hero-right{background:#1C2B22;display:flex;align-items:center;justify-content:center;padding:40px 32px}
+.card-ui{width:100%;max-width:280px;background:#243B2E;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.07)}
+.card-top{padding:20px 20px 16px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.card-label{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;font-weight:500}
+.card-balance{font-family:'DM Serif Display',serif;font-size:32px;color:#fff;letter-spacing:-1px;margin-bottom:4px}
+.card-sub{font-size:11px;color:rgba(255,255,255,0.35);font-family:'DM Mono',monospace}
+.card-chips{display:flex;gap:8px;margin-top:12px}
+.chip{background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,255,255,0.1);border-radius:6px;padding:8px 10px;flex:1}
+.chip-l{font-size:9px;color:rgba(255,255,255,0.4);margin-bottom:3px;letter-spacing:0.5px}
+.chip-v{font-size:12px;font-weight:500;color:#fff;font-family:'DM Mono',monospace}
+.chip-v.red{color:#E87070}
+.chip-v.grn{color:#6FC98A}
+.card-rows{padding:12px 20px 8px}
+.crow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:0.5px solid rgba(255,255,255,0.05)}
+.crow:last-child{border-bottom:none}
+.crow-left{display:flex;align-items:center;gap:10px}
+.crow-dot{width:28px;height:28px;border-radius:8px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:13px;color:rgba(255,255,255,0.5);flex-shrink:0}
+.crow-name{font-size:12px;color:rgba(255,255,255,0.8)}
+.crow-date{font-size:10px;color:rgba(255,255,255,0.3);margin-top:1px;font-family:'DM Mono',monospace}
+.crow-amt{font-size:12px;font-family:'DM Mono',monospace;font-weight:500;white-space:nowrap}
+.crow-amt.neg{color:#E87070}
+.crow-amt.pos{color:#6FC98A}
+.vel-pill{margin:12px 20px;background:rgba(90,138,106,0.15);border:0.5px solid rgba(90,138,106,0.3);border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.vel-l{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.5px}
+.vel-v{font-family:'DM Mono',monospace;font-size:14px;color:#6FC98A;font-weight:500;white-space:nowrap}
+.trust{display:flex;flex-wrap:wrap;gap:20px;padding:28px 48px;background:#EFEDE8;border-bottom:1px solid #E4E2DC}
+.trust-item{display:flex;align-items:center;gap:10px}
+.trust-icon{font-size:17px;color:#5A8A6A}
+.trust-text{font-size:13px;color:#4A4A4A}
+.features{padding:64px 48px}
+.sec-pre{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#5A8A6A;font-weight:500;margin-bottom:12px}
+.sec-h{font-family:'DM Serif Display',serif;font-size:32px;letter-spacing:-0.8px;color:#1C1C1C;margin-bottom:40px;line-height:1.2}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#E4E2DC}
+.feat{background:#F7F6F3;padding:28px 24px}
+.feat-num{font-family:'DM Mono',monospace;font-size:11px;color:#AEACAA;margin-bottom:16px;letter-spacing:1px}
+.feat-icon-wrap{width:34px;height:34px;border-radius:8px;background:#EAF2EC;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.feat-title{font-family:'DM Serif Display',serif;font-size:16px;color:#1C1C1C;margin-bottom:8px}
+.feat-desc{font-size:13px;color:#7A7A7A;line-height:1.7;font-weight:300}
+.metrics{background:#1C2B22;padding:48px;display:grid;grid-template-columns:repeat(3,1fr)}
+.met{padding:28px 24px;border-right:1px solid rgba(255,255,255,0.06)}
+.met:last-child{border-right:none}
+.met-val{font-family:'DM Serif Display',serif;font-size:40px;color:#fff;letter-spacing:-1.5px;margin-bottom:6px}
+.met-val span{color:#6FC98A;font-size:28px}
+.met-label{font-size:13px;color:rgba(255,255,255,0.4);font-weight:300;line-height:1.5}
+.how{padding:64px 48px;background:#EFEDE8}
+.how-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.step{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid #DDD9D2}
+.step:last-child{border-bottom:none}
+.step-n{font-family:'DM Mono',monospace;font-size:11px;color:#AEACAA;padding-top:3px;letter-spacing:1px;flex-shrink:0}
+.step-title{font-family:'DM Serif Display',serif;font-size:16px;color:#1C1C1C;margin-bottom:6px}
+.step-desc{font-size:13px;color:#7A7A7A;line-height:1.65;font-weight:300}
+.how-visual{background:#1C2B22;border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:10px}
+.mini-chart{height:72px;display:flex;align-items:flex-end;gap:5px;padding-bottom:8px;border-bottom:0.5px solid rgba(255,255,255,0.07);margin-bottom:4px}
+.bar{border-radius:3px 3px 0 0;flex:1}
+.how-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:0.5px solid rgba(255,255,255,0.05)}
+.how-row:last-child{border-bottom:none}
+.how-rl{font-size:11px;color:rgba(255,255,255,0.5)}
+.how-rv{font-family:'DM Mono',monospace;font-size:11px;color:#6FC98A}
+.cta{background:#F7F6F3;padding:72px 48px;text-align:center;border-top:1px solid #E4E2DC}
+.cta-h{font-family:'DM Serif Display',serif;font-size:36px;letter-spacing:-1px;color:#1C1C1C;margin-bottom:14px}
+.cta-sub{font-size:15px;color:#7A7A7A;margin-bottom:36px;font-weight:300;line-height:1.7}
+.dl-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.dl-btn{display:flex;align-items:center;gap:12px;background:#1C1C1C;border:none;border-radius:10px;padding:13px 22px;cursor:pointer}
+.dl-i{font-size:22px;color:#fff}
+.dl-s{font-size:10px;color:rgba(255,255,255,0.4);font-family:'DM Mono',monospace;letter-spacing:0.5px}
+.dl-n{font-size:14px;font-weight:500;color:#fff;font-family:'DM Sans',sans-serif}
+.footer{padding:22px 48px;background:#1C1C1C;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.fl{font-family:'DM Serif Display',serif;font-size:16px;color:rgba(255,255,255,0.5)}
+.fl span{color:#6FC98A}
+.fc{font-size:11px;color:rgba(255,255,255,0.2);font-family:'DM Mono',monospace;letter-spacing:0.5px}
+
+@media(max-width:900px){
+  .nav{padding:18px 24px}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-left{padding:48px 24px 40px}
+  .hero-h1{font-size:38px}
+  .hero-right{padding:32px 24px}
+  .trust{padding:24px}
+  .features{padding:48px 24px}
+  .feat-grid{grid-template-columns:repeat(2,1fr)}
+  .sec-h{font-size:26px}
+  .metrics{padding:36px 24px;grid-template-columns:1fr}
+  .met{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06);padding:20px 0}
+  .met:last-child{border-bottom:none}
+  .how{padding:48px 24px}
+  .how-grid{grid-template-columns:1fr;gap:32px}
+  .cta{padding:56px 24px}
+  .cta-h{font-size:28px}
+  .footer{padding:20px 24px}
+}
+
+@media(max-width:560px){
+  .nav{padding:16px 16px}
+  .hero-left{padding:40px 16px 32px}
+  .hero-h1{font-size:32px;letter-spacing:-1px}
+  .hero-body{font-size:14px}
+  .hero-right{padding:28px 16px}
+  .trust{padding:20px 16px;gap:14px}
+  .trust-text{font-size:12px}
+  .features{padding:40px 16px}
+  .feat-grid{grid-template-columns:1fr}
+  .feat{padding:22px 18px}
+  .sec-h{font-size:24px;margin-bottom:28px}
+  .metrics{padding:32px 16px}
+  .met-val{font-size:34px}
+  .how{padding:40px 16px}
+  .how-grid{gap:28px}
+  .cta{padding:48px 16px}
+  .cta-h{font-size:24px}
+  .cta-sub{font-size:14px}
+  .footer{padding:18px 16px;flex-direction:column;align-items:flex-start;gap:6px}
+  .dl-btn{padding:11px 18px}
+  .card-balance{font-size:26px}
+}
 </style>
 
-<div class="site">
-  <div class="hero">
-    <div class="hero-bg-circle"></div>
-    <nav class="nav">
-      <div class="logo">idarr<span>.</span></div>
-      <div class="nav-links">
-        <a href="#">Fonctionnalités</a>
-        <a href="#">Analytiques</a>
-        <a href="#">À propos</a>
-      </div>
-      <button class="nav-cta">Télécharger</button>
-    </nav>
-    <p class="hero-eyebrow">Gestion financière personnelle</p>
-    <h1 class="hero-headline">Maîtrisez votre argent,<br><em>jour après jour</em></h1>
-    <p class="hero-sub">idarr suit vos entrées, vos sorties, et vous donne une vitesse de dépense en temps réel — pour ne plus jamais dépasser votre budget.</p>
+<div class="w">
+
+<nav class="nav">
+  <div class="nav-logo">idarrati<sup>MA</sup></div>
+  <div class="nav-links">
+    <a href="#">Fonctionnalités</a>
+    <a href="#">Analytiques</a>
+    <a href="#">À propos</a>
+  </div>
+  <button class="nav-cta">Télécharger</button>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-tag"><span class="hero-tag-dot"></span>Gestion financière · Maroc</div>
+    <h1 class="hero-h1">Votre argent,<br><i>sous contrôle.</i><br>Chaque jour.</h1>
+    <p class="hero-body">idarr calcule votre vitesse de dépense en temps réel et vous dit combien de jours votre budget peut encore tenir — avant qu'il soit trop tard.</p>
     <div class="hero-actions">
-      <button class="btn-primary">Télécharger l'app</button>
-      <button class="btn-secondary">Voir la démo</button>
+      <button class="btn-dark">Télécharger gratuitement</button>
+      <button class="btn-ghost"><i class="ti ti-player-play" style="font-size:13px" aria-hidden="true"></i>Voir la démo</button>
     </div>
-    <div style="position:relative;display:inline-block;width:100%">
-      <div class="velocity-badge">
-        <div class="vel-label">Vitesse des sorties</div>
-        <div class="vel-val">208.90</div>
-        <div class="vel-unit">MAD / jour</div>
+  </div>
+  <div class="hero-right">
+    <div class="card-ui">
+      <div class="card-top">
+        <div class="card-label">Solde du compte</div>
+        <div class="card-balance">8 466.08</div>
+        <div class="card-sub">Mis à jour aujourd'hui · 15:44</div>
+        <div class="card-chips">
+          <div class="chip">
+            <div class="chip-l">ENTRÉES</div>
+            <div class="chip-v grn">+10 412</div>
+          </div>
+          <div class="chip">
+            <div class="chip-l">SORTIES</div>
+            <div class="chip-v red">−2 089</div>
+          </div>
+        </div>
       </div>
-      <div class="phone-wrap">
-        <div class="phone side">
-          <div class="phone-screen">
-            <div class="p-header">Analytics</div>
-            <div style="height:80px;display:flex;align-items:flex-end;gap:4px;padding-bottom:4px">
-              <div style="flex:1;background:rgba(76,175,138,0.3);border-radius:3px 3px 0 0;height:20%"></div>
-              <div style="flex:1;background:rgba(76,175,138,0.3);border-radius:3px 3px 0 0;height:30%"></div>
-              <div style="flex:1;background:rgba(76,175,138,0.3);border-radius:3px 3px 0 0;height:25%"></div>
-              <div style="flex:1;background:#4CAF8A;border-radius:3px 3px 0 0;height:85%"></div>
-              <div style="flex:1;background:#4CAF8A;border-radius:3px 3px 0 0;height:75%"></div>
-              <div style="flex:1;background:#4CAF8A;border-radius:3px 3px 0 0;height:90%"></div>
-              <div style="flex:1;background:#4CAF8A;border-radius:3px 3px 0 0;height:100%"></div>
-            </div>
+      <div class="card-rows">
+        <div class="crow">
+          <div class="crow-left">
+            <div class="crow-dot"><i class="ti ti-device-mobile" aria-hidden="true"></i></div>
+            <div><div class="crow-name">Google Play</div><div class="crow-date">10 Juin · 15:44</div></div>
           </div>
+          <div class="crow-amt neg">−250.00</div>
         </div>
-        <div class="phone center">
-          <div class="phone-screen">
-            <div class="p-header">Solde du compte</div>
-            <div class="p-balance">8 466.08</div>
-            <div class="p-updated">Mis à jour aujourd'hui</div>
-            <div class="p-stats">
-              <div class="p-stat">
-                <div class="p-stat-label">Entrées du mois</div>
-                <div class="p-stat-val">10 412.21</div>
-              </div>
-              <div class="p-stat">
-                <div class="p-stat-label">Sorties du mois</div>
-                <div class="p-stat-val red">-2 089.00</div>
-              </div>
-            </div>
-            <div class="p-rows">
-              <div class="p-row"><span class="p-row-date">Mer 10 Juin</span><span class="p-row-amt">-250.00</span></div>
-              <div class="p-row"><span class="p-row-date">Mar 09 Juin</span><span class="p-row-amt">-155.00</span></div>
-              <div class="p-row"><span class="p-row-date">Ven 05 Juin</span><span class="p-row-amt green">+9 500.00</span></div>
-              <div class="p-row"><span class="p-row-date">Lun 01 Juin</span><span class="p-row-amt green">+600.00</span></div>
-            </div>
+        <div class="crow">
+          <div class="crow-left">
+            <div class="crow-dot"><i class="ti ti-building-bank" aria-hidden="true"></i></div>
+            <div><div class="crow-name">Virement reçu</div><div class="crow-date">05 Juin · 09:12</div></div>
           </div>
+          <div class="crow-amt pos">+9 500.00</div>
         </div>
-        <div class="phone side">
-          <div class="phone-screen">
-            <div class="p-header">Budget journalier</div>
-            <div style="margin:8px 0 12px">
-              <div style="font-size:24px;font-weight:800;color:#fff;font-family:'Syne',sans-serif">100</div>
-              <div style="font-size:8px;color:rgba(255,255,255,0.4);margin-top:2px">MAD / jour</div>
-            </div>
-            <div style="background:#4CAF8A;border-radius:6px;padding:8px;text-align:center;font-size:9px;font-weight:700;color:#0D4A3A">Sauvegarder</div>
-            <div style="margin-top:12px;height:3px;background:rgba(255,255,255,0.1);border-radius:2px">
-              <div style="width:20%;height:100%;background:#4CAF8A;border-radius:2px"></div>
-            </div>
-            <div style="font-size:7px;color:rgba(255,255,255,0.3);margin-top:4px">20.06% du mois utilisé</div>
+        <div class="crow">
+          <div class="crow-left">
+            <div class="crow-dot"><i class="ti ti-wifi" aria-hidden="true"></i></div>
+            <div><div class="crow-name">Fibre internet</div><div class="crow-date">09 Juin · 10:37</div></div>
           </div>
+          <div class="crow-amt neg">−100.00</div>
         </div>
+      </div>
+      <div class="vel-pill">
+        <div>
+          <div class="vel-l">VITESSE DES SORTIES</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.25);font-family:'DM Mono',monospace;margin-top:2px">11 jours dévoré</div>
+        </div>
+        <div class="vel-v">208.90 / j</div>
       </div>
     </div>
   </div>
+</div>
 
-  <section class="features">
-    <p class="section-label">Fonctionnalités</p>
-    <h2 class="section-title">Tout ce dont vous avez besoin</h2>
-    <div class="features-grid">
-      <div class="feat-card">
-        <div class="feat-icon"><i class="ti ti-trending-up" style="color:#0D4A3A;font-size:20px" aria-hidden="true"></i></div>
-        <div class="accent-bar"></div>
-        <div class="feat-title">Vitesse des sorties</div>
-        <p class="feat-desc">Visualisez combien vous dépensez par jour, en temps réel. Ajustez votre rythme avant de dépasser votre budget mensuel.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon"><i class="ti ti-calendar-stats" style="color:#0D4A3A;font-size:20px" aria-hidden="true"></i></div>
-        <div class="accent-bar"></div>
-        <div class="feat-title">Journal quotidien</div>
-        <p class="feat-desc">Chaque journée détaillée avec entrées et sorties. Retrouvez n'importe quelle transaction en quelques secondes.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon"><i class="ti ti-chart-line" style="color:#0D4A3A;font-size:20px" aria-hidden="true"></i></div>
-        <div class="accent-bar"></div>
-        <div class="feat-title">Analytiques avancées</div>
-        <p class="feat-desc">Des graphiques clairs pour comprendre vos tendances de dépenses sur n'importe quelle période.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon"><i class="ti ti-shield-check" style="color:#0D4A3A;font-size:20px" aria-hidden="true"></i></div>
-        <div class="accent-bar"></div>
-        <div class="feat-title">Données privées</div>
-        <p class="feat-desc">Vos finances restent sur votre appareil. Aucun compte requis, aucune synchronisation cloud forcée.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon"><i class="ti ti-tag" style="color:#0D4A3A;font-size:20px" aria-hidden="true"></i></div>
-        <div class="accent-bar"></div>
-        <div class="feat-title">Catégories personnalisées</div>
-        <p class="feat-desc">Étiquetez vos transactions comme vous le souhaitez — alimentation, transport, développement, loisirs.</p>
-      </div>
-      <div class="feat-card">
-        <div class="feat-icon"><i class="ti ti-target" style="color:#0D4A3A;font-size:20px" aria-hidden="true"></i></div>
-        <div class="accent-bar"></div>
-        <div class="feat-title">Budget journalier</div>
-        <p class="feat-desc">Définissez un plafond quotidien et suivez exactement combien de jours votre budget a été "dévoré".</p>
-      </div>
-    </div>
-  </section>
+<div class="trust">
+  <div class="trust-item"><i class="ti ti-lock trust-icon" aria-hidden="true"></i><span class="trust-text">Données 100 % locales</span></div>
+  <div class="trust-item"><i class="ti ti-currency-dirham trust-icon" aria-hidden="true"></i><span class="trust-text">Gratuit, sans abonnement</span></div>
+  <div class="trust-item"><i class="ti ti-device-mobile trust-icon" aria-hidden="true"></i><span class="trust-text">Android · iOS bientôt</span></div>
+  <div class="trust-item"><i class="ti ti-chart-line trust-icon" aria-hidden="true"></i><span class="trust-text">Analytiques temps réel</span></div>
+</div>
 
-  <div class="stats-section">
-    <div class="stat-block">
-      <div class="stat-num">100<span>%</span></div>
-      <div class="stat-label">Données locales, votre appareil</div>
+<section class="features">
+  <p class="sec-pre">Fonctionnalités</p>
+  <h2 class="sec-h">Conçu pour votre quotidien financier</h2>
+  <div class="feat-grid">
+    <div class="feat">
+      <div class="feat-num">01</div>
+      <div class="feat-icon-wrap"><i class="ti ti-speedboat" style="font-size:16px;color:#3D7A54" aria-hidden="true"></i></div>
+      <div class="feat-title">Vitesse des sorties</div>
+      <p class="feat-desc">Votre rythme de dépense calculé en dirham par jour. Sachez combien de jours votre budget peut tenir.</p>
     </div>
-    <div class="stat-block">
-      <div class="stat-num"><span>∞</span></div>
-      <div class="stat-label">Transactions enregistrables</div>
+    <div class="feat">
+      <div class="feat-num">02</div>
+      <div class="feat-icon-wrap"><i class="ti ti-calendar-event" style="font-size:16px;color:#3D7A54" aria-hidden="true"></i></div>
+      <div class="feat-title">Journal quotidien</div>
+      <p class="feat-desc">Chaque transaction classée par jour. Retrouvez, modifiez ou supprimez n'importe quelle entrée en deux touches.</p>
     </div>
-    <div class="stat-block">
-      <div class="stat-num">0<span> MAD</span></div>
-      <div class="stat-label">Frais cachés ou abonnement</div>
+    <div class="feat">
+      <div class="feat-num">03</div>
+      <div class="feat-icon-wrap"><i class="ti ti-chart-area-line" style="font-size:16px;color:#3D7A54" aria-hidden="true"></i></div>
+      <div class="feat-title">Analytiques avancées</div>
+      <p class="feat-desc">Courbes d'évolution sur n'importe quelle période. Repérez vos tendances de dépenses.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-num">04</div>
+      <div class="feat-icon-wrap"><i class="ti ti-target" style="font-size:16px;color:#3D7A54" aria-hidden="true"></i></div>
+      <div class="feat-title">Budget journalier</div>
+      <p class="feat-desc">Fixez un plafond quotidien. idarr vous alerte quand vous accélérez et calcule les jours « dévorés ».</p>
+    </div>
+    <div class="feat">
+      <div class="feat-num">05</div>
+      <div class="feat-icon-wrap"><i class="ti ti-tags" style="font-size:16px;color:#3D7A54" aria-hidden="true"></i></div>
+      <div class="feat-title">Catégories libres</div>
+      <p class="feat-desc">Créez les étiquettes qui correspondent à votre vie, pas à un modèle générique.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-num">06</div>
+      <div class="feat-icon-wrap"><i class="ti ti-eye-off" style="font-size:16px;color:#3D7A54" aria-hidden="true"></i></div>
+      <div class="feat-title">Mode discret</div>
+      <p class="feat-desc">Masquez vos montants en un geste. Consultez vos finances en public sans exposer vos données.</p>
     </div>
   </div>
+</section>
 
-  <section class="how">
-    <p class="section-label">Comment ça marche</p>
-    <h2 class="section-title">Simple comme votre quotidien</h2>
-    <div class="steps">
+<div class="metrics">
+  <div class="met">
+    <div class="met-val">100<span>%</span></div>
+    <div class="met-label">Données stockées uniquement sur votre appareil</div>
+  </div>
+  <div class="met">
+    <div class="met-val">0<span> MAD</span></div>
+    <div class="met-label">Aucun frais caché, aucun abonnement</div>
+  </div>
+  <div class="met">
+    <div class="met-val"><span>∞</span></div>
+    <div class="met-label">Transactions enregistrables sans limite</div>
+  </div>
+</div>
+
+<section class="how">
+  <p class="sec-pre">Comment ça marche</p>
+  <h2 class="sec-h">Simple. Rapide. Précis.</h2>
+  <div class="how-grid">
+    <div>
       <div class="step">
-        <div class="step-num">01</div>
-        <div>
-          <div class="step-title">Ajoutez une transaction</div>
-          <p class="step-desc">Un appui sur le bouton +, entrez le montant, la catégorie, et c'est enregistré. Moins de 5 secondes.</p>
-        </div>
+        <div class="step-n">01</div>
+        <div><div class="step-title">Ajoutez une transaction</div><p class="step-desc">Appuyez sur +, saisissez le montant et la catégorie. Moins de cinq secondes, transaction enregistrée.</p></div>
       </div>
       <div class="step">
-        <div class="step-num">02</div>
-        <div>
-          <div class="step-title">idarr calcule votre vitesse</div>
-          <p class="step-desc">L'app analyse automatiquement votre rythme de dépense et vous affiche combien de jours votre budget peut encore tenir.</p>
-        </div>
+        <div class="step-n">02</div>
+        <div><div class="step-title">idarr calcule votre vitesse</div><p class="step-desc">L'application analyse vos sorties et vous affiche combien de jours votre budget mensuel peut tenir.</p></div>
       </div>
       <div class="step">
-        <div class="step-num">03</div>
-        <div>
-          <div class="step-title">Ajustez, maîtrisez, avancez</div>
-          <p class="step-desc">Consultez les analytiques, modifiez votre budget journalier, et prenez le contrôle de chaque dirham.</p>
-        </div>
+        <div class="step-n">03</div>
+        <div><div class="step-title">Ajustez et reprenez le contrôle</div><p class="step-desc">Modifiez votre budget journalier, explorez les analytiques, et décidez sur la base de vos vraies habitudes.</p></div>
       </div>
     </div>
-  </section>
-
-  <section class="cta-section">
-    <h2 class="cta-title">Téléchargez idarr gratuitement</h2>
-    <p class="cta-sub">Disponible sur Android. Commencez à gérer votre argent dès aujourd'hui.</p>
-    <div class="store-btns">
-      <div class="store-btn">
-        <div class="store-icon"><i class="ti ti-brand-google-play" style="color:#4CAF8A;font-size:24px" aria-hidden="true"></i></div>
-        <div class="store-text">
-          <div class="store-sub">Disponible sur</div>
-          <div class="store-name">Google Play</div>
-        </div>
+    <div class="how-visual">
+      <div style="font-size:10px;color:rgba(255,255,255,0.35);letter-spacing:1.5px;font-family:'DM Mono',monospace;margin-bottom:4px">ANALYTICS · JUIN 2026</div>
+      <div class="mini-chart">
+        <div class="bar" style="height:8%;background:rgba(111,201,138,0.25)"></div>
+        <div class="bar" style="height:16%;background:rgba(111,201,138,0.25)"></div>
+        <div class="bar" style="height:14%;background:rgba(111,201,138,0.25)"></div>
+        <div class="bar" style="height:20%;background:rgba(111,201,138,0.35)"></div>
+        <div class="bar" style="height:82%;background:#6FC98A"></div>
+        <div class="bar" style="height:80%;background:#6FC98A"></div>
+        <div class="bar" style="height:76%;background:#6FC98A"></div>
+        <div class="bar" style="height:95%;background:#6FC98A"></div>
+        <div class="bar" style="height:100%;background:#6FC98A"></div>
       </div>
-      <div class="store-btn">
-        <div class="store-icon"><i class="ti ti-brand-apple" style="color:#4CAF8A;font-size:24px" aria-hidden="true"></i></div>
-        <div class="store-text">
-          <div class="store-sub">Bientôt sur</div>
-          <div class="store-name">App Store</div>
-        </div>
-      </div>
+      <div class="how-row"><span class="how-rl">Solde courant</span><span class="how-rv">8 466.08 MAD</span></div>
+      <div class="how-row"><span class="how-rl">Entrées du mois</span><span class="how-rv">+10 412.21 MAD</span></div>
+      <div class="how-row"><span class="how-rl">Sorties du mois</span><span style="font-family:'DM Mono',monospace;font-size:11px;color:#E87070">−2 089.00 MAD</span></div>
+      <div class="how-row"><span class="how-rl">Vitesse des sorties</span><span class="how-rv">208.90 / jour</span></div>
+      <div class="how-row"><span class="how-rl">Budget journalier</span><span class="how-rv">100.00 MAD</span></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="footer">
-    <div class="footer-logo">idarr<span>.</span>ati</div>
-    <div class="footer-copy">© 2026 idarrati.com — Tous droits réservés</div>
-  </footer>
+<section class="cta">
+  <h2 class="cta-h">Prenez le contrôle de chaque dirham.</h2>
+  <p class="cta-sub">Téléchargez idarr gratuitement et commencez à suivre<br>vos finances dès aujourd'hui.</p>
+  <div class="dl-btns">
+    <div class="dl-btn">
+      <i class="ti ti-brand-google-play dl-i" aria-hidden="true"></i>
+      <div><div class="dl-s">DISPONIBLE SUR</div><div class="dl-n">Google Play</div></div>
+    </div>
+    <div class="dl-btn" style="background:#2A2A2A">
+      <i class="ti ti-brand-apple dl-i" aria-hidden="true"></i>
+      <div><div class="dl-s">BIENTÔT SUR</div><div class="dl-n">App Store</div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="fl">idarrati<span>.com</span></div>
+  <div class="fc">© 2026 · TOUS DROITS RÉSERVÉS</div>
+</footer>
+
 </div>
