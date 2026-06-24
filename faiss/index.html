@@ -285,10 +285,6 @@
             <h1>⚡ FaissVectorProject</h1>
             <p class="tagline">Lightning-Fast Vector Search at Scale</p>
             <p style="font-size: 1.05em; margin-bottom: 20px;">A high-performance TypeScript implementation of FAISS for modern applications</p>
-            <div class="cta-buttons">
-                <a href="#getting-started" class="btn btn-primary">Get Started</a>
-                <a href="https://github.com/FaissVectorProject" class="btn btn-secondary">View on GitHub</a>
-            </div>
         </div>
     </header>
 
@@ -347,34 +343,6 @@
             <h3 style="color: #555; margin-top: 20px; margin-bottom: 15px;">Installation</h3>
             <p style="margin-bottom: 10px;">Install FaissVectorProject via npm:</p>
             <div class="code-block">npm install faiss-vector-project</div>
-
-            <h3 style="color: #555; margin-top: 25px; margin-bottom: 15px;">Basic Usage</h3>
-            <div class="code-block">import { FaissIndex } from 'faiss-vector-project';
-
-// Create an index for 768-dimensional vectors
-const index = new FaissIndex({
-  dimension: 768,
-  indexType: 'IVF_FLAT',
-  nlist: 100
-});
-
-// Add vectors to the index
-const vectors = [
-  [0.1, 0.2, 0.3, /* ... */],
-  [0.15, 0.25, 0.35, /* ... */],
-];
-index.add(vectors);
-
-// Search for similar vectors
-const query = [0.12, 0.22, 0.32, /* ... */];
-const results = index.search(query, k=5);
-
-console.log('Top 5 results:', results);
-            </div>
-
-            <h3 style="color: #555; margin-top: 25px; margin-bottom: 15px;">Documentation</h3>
-            <p>For detailed documentation, examples, and API reference, visit the project repository or check the docs directory.</p>
-        </section>
 
         <section>
             <h2>Technology Stack</h2>
