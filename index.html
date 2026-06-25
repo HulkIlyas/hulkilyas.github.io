@@ -393,7 +393,31 @@
       font-weight: 600;
       color: var(--accent);
     }
+    .slogan-bar {
+      width: 100%;
+      overflow: hidden;
+      border-top: 1px solid #d8cfc4;
+      border-bottom: 1px solid #d8cfc4;
+      padding: 10px 0;
+      position: relative;
+      white-space: nowrap;
+      font-style: italic;
+      color: #7a6b58;
+    }
 
+.slogan-track {
+  display: inline-block;
+  animation: slideLeft 15s linear infinite;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
     @media (max-width: 600px) {
       header .page {
         flex-direction: column;
@@ -790,7 +814,23 @@
   <footer>
     Ilyas El Mousaouy — Full Stack Developer — Marrakech, Maroc
   </footer>
-
+  <script>
+  const slogans = [
+    "Building mobile and web solutions that solve real problems",
+    "React Native Developer with 6+ years of experience",
+    "Turning ideas into scalable products",
+    "Crafting fast, reliable, and modern applications",
+    "From concept to production-ready software"
+  ];
+  
+  let index = 0;
+  const text = document.getElementById("slogan-text");
+  
+  setInterval(() => {
+    index = (index + 1) % slogans.length;
+    text.textContent = slogans[index];
+  }, 15000); // same as animation duration
+  </script>
 </body>
 
 </html>
