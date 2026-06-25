@@ -408,7 +408,7 @@
 
     .slogan-track {
       display: inline-block;
-      animation: slideLeft 15s linear infinite;
+      animation: slideLeft 30s linear infinite;
     }
 
     @keyframes slideLeft {
@@ -945,7 +945,7 @@
       const screenWidth = window.innerWidth;
       const textWidth = text.offsetWidth;
     
-      const speed = 500; // pixels per second
+      const speed =  (screenWidth + textWidth)/30; // pixels per second
     
       const duration = (screenWidth + textWidth) / speed;
     
