@@ -900,6 +900,21 @@
     let index = 0;
     const text = document.getElementById("slogan-text");
 
+
+    function updateDuration() {
+      const screenWidth = window.innerWidth;
+      const textWidth = text.offsetWidth;
+    
+      const speed = 100; // pixels per second
+    
+      const duration = (screenWidth + textWidth) / speed;
+    
+      text.style.animationDuration = `${duration}s`;
+    }
+    
+    updateDuration();
+    window.addEventListener('resize', updateDuration);
+
     setInterval(() => {
       index = (index + 1) % slogans.length;
       text.textContent = slogans[index];
