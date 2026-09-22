@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — IDARR — Budget &amp; Expense Manager</title>
+    <style>
+        :root {
+            --primary: #087A64;
+            --primary-hover: #065e4d;
+            --primary-light: #e6f2f0;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-light: #f9fafb;
+            --bg-card: #ffffff;
+            --border: #e5e7eb;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            --radius: 8px;
+            --max-width: 900px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        .contact-btn {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            flex: 1;
+        }
+
+        .page-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.25rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-date {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .content-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        ul, ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-box {
+            background-color: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 1.25rem;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 1.25rem 0;
+        }
+
+        .pricing-box ul {
+            margin-bottom: 0;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .pricing-box li {
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 0.4rem;
+        }
+
+        .disclaimer-box {
+            background-color: #fef3c7;
+            border-left: 4px solid #d97706;
+            color: #92400e;
+            padding: 1.25rem;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 1.25rem 0;
+            font-weight: 500;
+        }
+
+        footer {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 640px) {
+            .content-card {
+                padding: 1.5rem;
+            }
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="https://ilyas.help" class="brand">
+                IDARR — Budget &amp; Expense Manager
+            </a>
+            <nav>
+                <a href="terms.html" class="active">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="refund.html">Refund Policy</a>
+                <a href="https://ilyas.help" class="contact-btn">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Terms of Service</h1>
+            <div class="meta-date">Effective Date: September 22, 2026 | Last updated: September 22, 2026</div>
+        </div>
+
+        <div class="content-card">
+            <section>
+                <h2>1. Introduction</h2>
+                <p>Welcome to <strong>IDARR — Budget &amp; Expense Manager</strong>. These Terms of Service ("Terms") govern your access to and use of the IDARR application, website, and related services ("Service"). By using IDARR, you enter into a binding agreement based on the conditions described below.</p>
+            </section>
+
+            <section>
+                <h2>2. Acceptance of Terms</h2>
+                <p>By downloading, installing, accessing, or using IDARR, you confirm that you have read, understood, and agreed to be bound by these Terms. If you do not agree to these Terms, you must not access or use the Service.</p>
+            </section>
+
+            <section>
+                <h2>3. Description of IDARR</h2>
+                <p>IDARR is a personal finance management tool designed to assist users in tracking personal income, managing expenses, defining budgets, monitoring daily account balances, viewing financial summaries, and analyzing spending behavior.</p>
+            </section>
+
+            <section>
+                <h2>4. Eligibility</h2>
+                <p>You must be at least the legal age of majority in your jurisdiction, or at least 18 years old, to form a binding contract to use IDARR. By using the Service, you represent and warrant that you meet these eligibility requirements.</p>
+            </section>
+
+            <section>
+                <h2>5. User Accounts</h2>
+                <p>If account creation or authentication is enabled within IDARR, you are responsible for maintaining the confidentiality of your credentials and restricting access to your device. You accept responsibility for all activities that occur under your account.</p>
+            </section>
+
+            <section>
+                <h2>6. User Responsibilities</h2>
+                <p>You agree to use IDARR strictly for lawful personal budgeting and financial organization. You are solely responsible for ensuring the accuracy and completeness of any financial information, numbers, or records you enter into the app.</p>
+            </section>
+
+            <section>
+                <h2>7. Financial Data and User Content</h2>
+                <p>You retain full ownership of all financial data, income entries, expense logs, and notes you input into IDARR. By entering data into the app, you grant IDARR the limited rights necessary to process, store, and display that data solely to provide the app's budgeting features to you.</p>
+            </section>
+
+            <section>
+                <h2>8. Subscriptions and Payments</h2>
+                <p>IDARR offers premium functionality ("Pro plans"). Payments and order processing are handled seamlessly through our merchant of record/payment processor, Paddle, or authorized app marketplace providers. When purchasing a plan, you agree to comply with the terms presented by the payment provider at checkout.</p>
+            </section>
+
+            <section>
+                <h2>9. Pricing</h2>
+                <p>IDARR offers Pro access under the following pricing tiers:</p>
+                <div class="pricing-box">
+                    <ul>
+                        <li>Monthly Plan: $2.99 USD / month</li>
+                        <li>Yearly Plan: $24.00 USD / year</li>
+                        <li>Lifetime Plan: $4.99 USD (one-time payment)</li>
+                    </ul>
+                </div>
+                <p><strong>Auto-Renewal:</strong> Monthly and Yearly plans are recurring subscriptions that automatically renew at the end of each billing cycle unless cancelled prior to the renewal date.</p>
+                <p><strong>Lifetime Plan:</strong> The Lifetime plan is a single, non-recurring, one-time purchase granting access for the life of the product without recurring renewal charges.</p>
+                <p><strong>Taxes &amp; Currency:</strong> Prices listed may be subject to applicable local sales taxes, VAT, currency conversion fees, or banking fees imposed by the payment provider or your financial institution. The total checkout price presented at the point of sale is the applicable final purchase price.</p>
+            </section>
+
+            <section>
+                <h2>10. Free Trials</h2>
+                <p>Free trials are only available if explicitly promoted during checkout or within the app interface. If a free trial is offered, details regarding duration and conversion into a paid plan will be clearly disclosed prior to activation.</p>
+            </section>
+
+            <section>
+                <h2>11. Cancellation</h2>
+                <p>You may cancel a recurring subscription (Monthly or Yearly) at any time. To prevent future charges, you must cancel prior to your next scheduled billing renewal date. Cancellations can be managed through your app store subscription settings, your payment management receipt link, or by contacting customer support.</p>
+            </section>
+
+            <section>
+                <h2>12. Refunds</h2>
+                <p>Refund requests and eligibility are governed by our official <a href="refund.html" style="color:var(--primary); text-decoration:underline;">Refund Policy</a> and applicable payment provider policies.</p>
+            </section>
+
+            <section>
+                <h2>13. Intellectual Property</h2>
+                <p>All intellectual property rights in IDARR—including software code, designs, branding, logos, graphics, icons, and text—are owned by or licensed to IDARR. You are granted a limited, non-exclusive, non-transferable, revocable license to use the app for personal use only.</p>
+            </section>
+
+            <section>
+                <h2>14. User Data</h2>
+                <p>As detailed in our <a href="privacy.html" style="color:var(--primary); text-decoration:underline;">Privacy Policy</a>, you retain ownership of your user data. We do not sell your personal financial records to third parties.</p>
+            </section>
+
+            <section>
+                <h2>15. Prohibited Use</h2>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Decompile, reverse engineer, or disassemble any aspect of the IDARR application except where explicitly permitted by law.</li>
+                    <li>Attempt unauthorized access to our servers, infrastructure, or connected databases.</li>
+                    <li>Use the Service for illegal financial transactions or unlawful purposes.</li>
+                    <li>Interfere with or disrupt the security or performance of the Service.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>16. Service Availability</h2>
+                <p>IDARR is provided on an "AS IS" and "AS AVAILABLE" basis. While we strive for continuous availability, we do not guarantee uninterrupted operational uptime, maintenance-free operations, or error-free performance.</p>
+            </section>
+
+            <section>
+                <h2>17. Financial Disclaimer</h2>
+                <div class="disclaimer-box">
+                    <strong>Financial Disclaimer:</strong> IDARR is a budgeting and expense-tracking tool. It does not provide financial, investment, tax, accounting, legal, or other professional advice. Users are responsible for their own financial decisions.
+                </div>
+            </section>
+
+            <section>
+                <h2>18. Limitation of Liability</h2>
+                <p>To the maximum extent permitted by applicable law, IDARR shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or goodwill, arising out of or in connection with your access to or use of (or inability to use) the Service.</p>
+            </section>
+
+            <section>
+                <h2>19. Changes to the Service</h2>
+                <p>We reserve the right to modify, update, enhance, or discontinue features, functionality, or pricing of IDARR over time to improve the Service.</p>
+            </section>
+
+            <section>
+                <h2>20. Changes to These Terms</h2>
+                <p>We may update these Terms periodically. Any revisions will be published on this page with an updated "Last updated" date. Continued use of IDARR after updates constitutes acceptance of the modified Terms.</p>
+            </section>
+
+            <section>
+                <h2>21. Contact</h2>
+                <p>If you have any questions or feedback regarding these Terms, please contact us at:</p>
+                <p><a href="https://ilyas.help" target="_blank" style="color:var(--primary); font-weight:600;">Contact Us — https://ilyas.help</a></p>
+            </section>
+
+            <section>
+                <h2>22. Effective Date</h2>
+                <p>These Terms of Service are effective as of <strong>September 22, 2026</strong>.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="refund.html">Refund Policy</a>
+                <a href="https://ilyas.help" target="_blank">Contact Us</a>
+            </div>
+            <div class="copyright">
+                &copy; 2026 IDARR — Budget &amp; Expense Manager. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
