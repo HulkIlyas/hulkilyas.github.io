@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — IDARR — Budget &amp; Expense Manager</title>
+    <style>
+        :root {
+            --primary: #087A64;
+            --primary-hover: #065e4d;
+            --primary-light: #e6f2f0;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-light: #f9fafb;
+            --bg-card: #ffffff;
+            --border: #e5e7eb;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            --radius: 8px;
+            --max-width: 900px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .brand {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        .contact-btn {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            flex: 1;
+        }
+
+        .page-header {
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.25rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-date {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .content-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background-color: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            padding: 1.25rem;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 1.25rem 0;
+            font-weight: 500;
+        }
+
+        .disclaimer-box {
+            background-color: #fef3c7;
+            border-left: 4px solid #d97706;
+            color: #92400e;
+            padding: 1.25rem;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            margin: 1.25rem 0;
+            font-weight: 500;
+        }
+
+        footer {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 640px) {
+            .content-card {
+                padding: 1.5rem;
+            }
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="https://ilyas.help" class="brand">
+                IDARR — Budget &amp; Expense Manager
+            </a>
+            <nav>
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html" class="active">Privacy Policy</a>
+                <a href="refund.html">Refund Policy</a>
+                <a href="https://ilyas.help" class="contact-btn">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Privacy Policy</h1>
+            <div class="meta-date">Effective Date: September 22, 2026 | Last updated: September 22, 2026</div>
+        </div>
+
+        <div class="content-card">
+            <section>
+                <h2>1. Introduction</h2>
+                <p>This Privacy Policy explains how <strong>IDARR — Budget &amp; Expense Manager</strong> ("we", "us", or "IDARR") handles information when you use our mobile application and related services. We are committed to safeguarding your personal and financial information.</p>
+                <div class="highlight-box">
+                    <strong>Our Core Commitment:</strong> IDARR does NOT sell users' personal financial information.
+                </div>
+            </section>
+
+            <section>
+                <h2>2. Information We Collect</h2>
+                <p>We collect information to provide, maintain, and improve our budgeting tools. The types of data processed include information you directly input into the application as well as essential technical data necessary for application operations.</p>
+            </section>
+
+            <section>
+                <h2>3. Information You Provide</h2>
+                <p>When using IDARR, you voluntarily provide information to facilitate expense management. This includes budget goals, daily balance figures, custom categories, expense notes, and transaction logs.</p>
+            </section>
+
+            <section>
+                <h2>4. Financial and Transaction Data</h2>
+                <p>IDARR processes financial entries that you voluntarily enter into the app—such as income, expense amounts, budget thresholds, spending categories, and daily ledger entries. This data is processed strictly to generate summaries, budget calculations, and spending insights for your personal view within the app.</p>
+            </section>
+
+            <section>
+                <h2>5. Account and Authentication Information</h2>
+                <p>If you create an account or sign in to IDARR, we may collect basic account identifiers such as an email address or user ID to authenticate your access, sync data across your devices, and secure your session.</p>
+            </section>
+
+            <section>
+                <h2>6. Device and Technical Information</h2>
+                <p>To ensure app compatibility and optimal presentation, we may automatically collect standard technical information, such as your mobile device model, operating system version, app version, language preferences, and general system performance data.</p>
+            </section>
+
+            <section>
+                <h2>7. Analytics and Crash Information</h2>
+                <p>We may process anonymized or aggregated diagnostic data and crash reports to identify software bugs, analyze app performance, and optimize feature usability. These metrics do not reveal your personal identity or financial records.</p>
+            </section>
+
+            <section>
+                <h2>8. Advertising Information</h2>
+                <p>If free or ad-supported tiers are active within the application, generic advertising parameters or non-sensitive device identifiers may be utilized to deliver non-intrusive advertisements in compliance with standard mobile ad ecosystem guidelines.</p>
+            </section>
+
+            <section>
+                <h2>9. Payment and Subscription Information</h2>
+                <p>When you purchase a Pro plan (Monthly, Yearly, or Lifetime), payment transactions are handled directly by authorized payment service providers (such as Paddle) or mobile app store platforms. IDARR itself does not collect or store full credit card numbers or sensitive payment details on our servers.</p>
+            </section>
+
+            <section>
+                <h2>10. How We Use Information</h2>
+                <p>We use processed information solely for legitimate operational purposes:</p>
+                <ul>
+                    <li>Providing and delivering IDARR's budgeting and expense-tracking features.</li>
+                    <li>Calculating financial summaries, budget tracking, and daily balance totals.</li>
+                    <li>Managing active Pro subscriptions and validating purchases.</li>
+                    <li>Diagnosing application crashes and improving overall performance.</li>
+                    <li>Responding to customer support requests and inquiries.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>11. How We Store Information</h2>
+                <p>Your entered financial information is saved locally on your device and, where account sync features are enabled, stored on secure cloud infrastructure utilizing industry-standard security protocols.</p>
+            </section>
+
+            <section>
+                <h2>12. Data Security</h2>
+                <p>We implement reasonable technical, administrative, and physical safeguards designed to protect your information against unauthorized access, loss, disclosure, or alteration. However, no electronic transmission or storage technology can be guaranteed 100% secure.</p>
+            </section>
+
+            <section>
+                <h2>13. Third-Party Services</h2>
+                <p>IDARR may interface with trusted third-party service infrastructure to support cloud databases, crash diagnostics, analytics, advertising, and subscription billing (such as Paddle). These providers process data on our behalf in compliance with relevant data privacy principles.</p>
+            </section>
+
+            <section>
+                <h2>14. Data Retention</h2>
+                <p>We retain financial data and account information for as long as your account remains active or as needed to provide you with the application's functionality. Local data remains on your device until cleared or uninstalled.</p>
+            </section>
+
+            <section>
+                <h2>15. Data Deletion</h2>
+                <p>You have the right to request the deletion of your account and associated cloud data at any time. You can submit a data deletion request by visiting our contact page at <a href="https://ilyas.help" target="_blank" style="color:var(--primary); font-weight:600;">https://ilyas.help</a>. Clearing app data or uninstalling the app removes locally stored financial data from your device.</p>
+            </section>
+
+            <section>
+                <h2>16. User Rights</h2>
+                <p>Depending on your jurisdiction, you may have rights regarding your personal information, including the right to access, correct, export, or request deletion of your data. Contact us to exercise these rights.</p>
+            </section>
+
+            <section>
+                <h2>17. Children's Privacy</h2>
+                <p>IDARR is a general-audience financial tracking application and is not intended for or directed to children under 13 years of age (or the legal age requirement in your country). We do not knowingly collect personal data from children.</p>
+            </section>
+
+            <section>
+                <h2>18. International Data Transfers</h2>
+                <p>Information processed by IDARR or our cloud service providers may be hosted and processed in servers located outside your home state or country. We ensure appropriate safeguards are maintained for cross-border data transfers.</p>
+            </section>
+
+            <section>
+                <h2>19. Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last updated" date. We encourage you to review this policy periodically.</p>
+            </section>
+
+            <section>
+                <h2>20. Contact</h2>
+                <p>If you have any questions, privacy concerns, or data deletion requests regarding this Privacy Policy, please contact us via our website:</p>
+                <p><a href="https://ilyas.help" target="_blank" style="color:var(--primary); font-weight:600;">Contact Us — https://ilyas.help</a></p>
+            </section>
+
+            <section>
+                <div class="disclaimer-box">
+                    <strong>Financial Disclaimer:</strong> Financial information entered into IDARR is used exclusively for personal expense tracking and budgeting features. IDARR does not provide professional financial, investment, tax, or legal advice.
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="refund.html">Refund Policy</a>
+                <a href="https://ilyas.help" target="_blank">Contact Us</a>
+            </div>
+            <div class="copyright">
+                &copy; 2026 IDARR — Budget &amp; Expense Manager. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
